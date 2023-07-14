@@ -9,6 +9,7 @@ Installation
     * pip install django-sso-client-manager
     * Add ``sso_client_manager`` to your ``INSTALLED_APPS``
     * Add ``sso_client_manager.middlewares.ParseCodeDataMiddleware`` to your ``MIDDLEWARE``
+    * Add ``path('', include('sso_client_manager.urls')),`` to your project urls.py
 
 ::
 
