@@ -56,6 +56,7 @@ def logout(request):
     url = f'{settings.SSO_SERVER_LOGOUT}?next={next_url}'
     response = redirect(url)
     response.delete_cookie('my_code')
+    response.delete_cookie('code')
     return response
 
 class SetCodeView(View):
@@ -77,6 +78,8 @@ class SetCodeView(View):
         if hasattr(user, 'sso_id') and user_data.get('id'):
             user.sso_id = user_data.get('id')
             user.save()
+
+        return user
 
     def get(self, request):
 

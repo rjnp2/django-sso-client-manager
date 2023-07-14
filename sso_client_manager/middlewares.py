@@ -42,6 +42,7 @@ class ParseCodeDataMiddleware(MiddlewareMixin):
                 if not response.ok:
                     response = JsonResponse(response_json, status=response.status_code)
                     response.delete_cookie('code')
+                    response.delete_cookie('my_code')
                     return response
                 
                 response_json = response_json['code']
@@ -59,6 +60,7 @@ class ParseCodeDataMiddleware(MiddlewareMixin):
                     'message' : "user is not found."
                     }, status=400)
                 response.delete_cookie('code')
+                response.delete_cookie('my_code')
                 return response
 
         response = self.get_response(request)
