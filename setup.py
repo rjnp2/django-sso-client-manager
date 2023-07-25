@@ -8,11 +8,11 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-sso-client-manager',
-    version='0.0.1',
+    version='0.0.7',
     packages=['sso_client_manager'],
     include_package_data=True,
     license='MIT License',
-    description='A Django app for the managing sso client that have login, logout and set code a in cookies.',
+    description='Django-SSO-Client-Manager is a Django application designed to simplify the management of Single Sign-On (SSO) clients within a web application. It provides functionalities for handling login and logout processes and conveniently sets codes in cookies for seamless authentication and user session management. By integrating this app into a Django project, developers can streamline the implementation of SSO functionality and enhance the overall user experience.',
     long_description=README,
     long_description_content_type="text/markdown",
     url='https://github.com/rjnp2/django-sso-client-manager',
@@ -25,14 +25,13 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-    python_requires=">=3.10",
+    python_requires=">=3.8",
     install_requires=[
-        'cryptography>=1.0.1',
-        'requests>=2.31.0',
+        'requests>=2.28.1',
     ],
     extras_require={
         "dev": ['twine>=4.0.2',]
